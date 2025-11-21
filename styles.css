@@ -264,4 +264,9 @@ body::before {
         padding-top: 18%; /* 保持方塊比例 */
         font-size: 1.2em;
     }
+
+}
+.pulse-animation {
+    /* 調用您定義的 pulse 動畫 */
+    animation: pulse 1.5s infinite; 
 }
