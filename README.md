@@ -3,7 +3,7 @@ A simple divination website
 # 🔮 靈魂指引 - 占一下卜（Divination-test）
 
 這是一個提供線上占卜和命理分析的靜態網站專案。我們致力於將古老智慧與現代互動技術相結合，為用戶提供全面、深入的自我成長指引。
-
+點此進入(https://rlu31131-spec.github.io/-Divination-test-/index.html)
 ---
 
 ## 🚀 網站特色與功能
