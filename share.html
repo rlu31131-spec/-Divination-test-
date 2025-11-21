@@ -135,57 +135,58 @@
 
     </div> 
 
-    <script>
-        // 設定要分享的內容
-        const shareTitle = "🔮 占卜預告：好事將近！快來看你的幸運能量！";
-        // 修正點：將分享連結導向網站首頁 index.html
-        const shareURL = window.location.origin + "/-Divination-test-/index.html"; 
-        const shareText = "我在「靈魂指引-占一下卜」測出了好事即將發生！點擊這裡進入首頁，開始你的幸運預告吧！";
+   <script>
+    // 設定要分享的內容
+    const shareTitle = "🔮 占卜預告：好事將近！快來看你的幸運能量！";
+    
+    // **修正：使用帶有儲存庫名稱的絕對路徑來確保連結準確**
+    const shareURL = "https://rlu31131-spec.github.io/-Divination-test-/index.html"; 
+    
+    const shareText = "我在「靈魂指引-占一下卜」測出了好事即將發生！點擊這裡進入首頁，開始你的幸運預告吧！";
 
-        function shareToLine() {
-            // Line 分享連結格式：https://line.me/R/msg/text/?{message}%0D%0A{url}
-            const lineShareLink = `https://line.me/R/msg/text/?${encodeURIComponent(shareText)}%0D%0A${encodeURIComponent(shareURL)}`;
-            window.open(lineShareLink, '_blank');
-        }
+    function shareToLine() {
+        const lineShareLink = `https://line.me/R/msg/text/?${encodeURIComponent(shareText)}%0D%0A${encodeURIComponent(shareURL)}`;
+        window.open(lineShareLink, '_blank');
+    }
 
-        function shareToFacebook() {
-            // Facebook 分享連結格式：https://www.facebook.com/sharer/sharer.php?u={url}&quote={quote}
-            const fbShareLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}&quote=${encodeURIComponent(shareText)}`;
-            window.open(fbShareLink, '_blank');
-        }
+    function shareToFacebook() {
+        const fbShareLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}&quote=${encodeURIComponent(shareText)}`;
+        window.open(fbShareLink, '_blank');
+    }
 
-        /**
-         * 複製連結到剪貼簿，並給予視覺回饋
-         */
-        function copyLink() {
-            const tempInput = document.createElement('input');
-            const copyButton = document.getElementById('copy-btn');
-            const originalText = copyButton.innerHTML;
+    /**
+     * 複製連結到剪貼簿，並給予視覺回饋
+     */
+    function copyLink() {
+        const tempInput = document.createElement('input');
+        const copyButton = document.getElementById('copy-btn');
+        const originalText = copyButton.innerHTML;
 
-            // 1. 執行複製
-            tempInput.value = shareURL; // 使用已修正為 index.html 的 shareURL
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+        // 1. 執行複製
+        tempInput.value = shareURL; // 使用已修正為完整網址的 shareURL
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
 
-            // 2. 視覺回饋
-            copyButton.innerHTML = '✅ 連結已複製！';
-            copyButton.classList.remove('btn-copy');
-            copyButton.classList.add('btn-success');
-            copyButton.disabled = true;
+        // 2. 視覺回饋
+        copyButton.innerHTML = '✅ 連結已複製！';
+        copyButton.classList.remove('btn-copy');
+        copyButton.classList.add('btn-success');
+        copyButton.disabled = true;
 
-            // 3. 2秒後恢復原狀
-            setTimeout(() => {
-                copyButton.innerHTML = originalText;
-                copyButton.classList.remove('btn-success');
-                copyButton.classList.add('btn-copy');
-                copyButton.disabled = false;
-            }, 2000);
-        }
-    </script>
+        // 3. 2秒後恢復原狀
+        setTimeout(() => {
+            copyButton.innerHTML = originalText;
+            copyButton.classList.remove('btn-success');
+            copyButton.classList.add('btn-copy');
+            copyButton.disabled = false;
+        }, 2000);
+    }
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
+
