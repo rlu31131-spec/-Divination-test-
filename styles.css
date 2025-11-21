@@ -267,6 +267,5 @@ body::before {
 
 }
 .pulse-animation {
-    /* 調用您定義的 pulse 動畫 */
     animation: pulse 1.5s infinite; 
 }
